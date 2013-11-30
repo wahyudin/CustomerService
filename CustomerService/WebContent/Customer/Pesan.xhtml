@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	
+</h:head>
+<h:body>
+<h:form>
+<p:panelGrid columns="2">
+	<h:outputText value="Jenis :"></h:outputText>
+		<p:selectOneMenu>
+			<f:selectItem itemLabel="Kritik" itemValue="1" />
+			<f:selectItem itemLabel="Saran" itemValue="2" />
+		</p:selectOneMenu>
+		
+		<h:outputText value="Nama :"></h:outputText>
+		<p:inputText></p:inputText>
+		
+		<h:outputText value="Email :"></h:outputText>
+		<p:inputText></p:inputText>
+		
+		<h:outputText value="Isi :"></h:outputText>
+		<p:inputTextarea rows="5"></p:inputTextarea>
+	</p:panelGrid>
+</h:form>
+	
+</h:body>
+</html>

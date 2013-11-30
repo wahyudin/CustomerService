@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/includes/template.html">
+	<ui:define name="content">
+		<div class="page">
+			<div class="main">
+				<div class="content">
+					<p:panel style="margin-bottom:20px; padding:0px"
+						header="Produk Terbaru">
+						<center>
+							<p:galleria id="contentGalleria" value="#{barang.barangs}"
+								var="b" panelWidth="920" panelHeight="605" frameWidth="100"
+								frameHeight="140" effect="clip">
+								<p:graphicImage id="imageBarang" value="#{b.url}"
+									title="#{b.namaBarang}" />
+								<f:facet name="content">
+									<center></center>
+									<h:panelGrid columns="2" cellpadding="5" frame="box"
+										style="margin-top:20px;">
+										<f:facet name="header">
+											<p:graphicImage value="#{b.url}" width="300"
+												title="#{b.namaBarang}" />
+										</f:facet>
+
+										<h:outputText value="ID " />
+										<h:outputText id="id" value="#{b.idBarang}" />
+
+										<h:outputText value="Nama " />
+										<h:outputText id="nama" value="#{b.namaBarang}" />
+
+										<h:outputText value="Harga " />
+										<h:outputText id="harga" value="#{b.hargaJual}" />
+									</h:panelGrid>
+								</f:facet>
+							</p:galleria>
+						</center>
+					</p:panel>
+					<!-- <p:panel>
+						<h:form>
+							<p:dataTable value="#{barang.barangs}" var="b">
+								<p:column>
+									<f:facet name="header">
+										<h:outputLabel value="id barang" />
+									</f:facet>
+									<h:outputLabel value="#{b.idBarang}" />
+								</p:column>
+								<p:column>
+									<f:facet name="header">
+										<h:outputLabel value="nama barang" />
+									</f:facet>
+									<h:outputLabel value="#{b.namaBarang}" />
+								</p:column>
+								<p:column>
+									<f:facet name="header">
+										<h:outputLabel value="harga" />
+									</f:facet>
+									<h:outputLabel value="#{b.hargaJual}" />
+								</p:column>
+								<p:column>
+									<f:facet name="header">
+										<h:outputLabel value="image" />
+									</f:facet>
+									<p:graphicImage value="#{b.url}" width="200"
+										title="#{b.namaBarang}"></p:graphicImage>
+								</p:column>
+							</p:dataTable>
+						</h:form>
+					</p:panel> -->
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+	<ui:composition template="/WEB-INF/includes/template.html">
+		<ui:define name="content">
+			<div class="page">
+				<div class="main">
+					<div class="content">
+						<p:panel style="margin-bottom:20px; padding:0px" header="Kritik dan Saran">
+							<h:form>
+								<table>
+									<tr>
+										<p:growl id="growl" />
+									</tr>
+									<tr>
+										<td style="padding:5px;" width="100"><h:outputText value="Jenis"></h:outputText></td>
+										<td style="padding:5px;"><p:selectOneMenu value="#{pesanPelanggan.jenisPesan}">
+												<f:selectItem itemLabel="Kritik" itemValue="Kritik" />
+												<f:selectItem itemLabel="Saran" itemValue="Saran" />
+											</p:selectOneMenu></td>
+									</tr>
+									<tr>
+										<td style="padding:5px;"><h:outputText value="Nama"></h:outputText></td>
+										<td style="padding:5px;"><p:inputText value="#{pesanPelanggan.namaPelanggan}"
+												required="true" requiredMessage="nama harus diisi" size="30"></p:inputText></td>
+									</tr>
+									<tr>
+										<td style="padding:5px;"><h:outputText value="Email"></h:outputText></td>
+										<td style="padding:5px;"><p:inputText value="#{pesanPelanggan.email}"
+												id="textEmail" required="true"
+												requiredMessage="Email Harus Diisi"
+												validatorMessage="Invalid email format" size="30">
+
+												<f:validateRegex
+													pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+											</p:inputText></td>
+									</tr>
+									<tr>
+										<td style="padding:5px;"><h:outputText value="Isi"></h:outputText></td>
+										<td style="padding:5px;"><p:inputTextarea value="#{pesanPelanggan.pesan}"
+												rows="5" cols="50" required="true"
+												requiredMessage="Pesan harus diisi"></p:inputTextarea></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td align="right" style="padding:5px;"><p:commandButton type="submit" value="Submit"
+												action="#{pesanPelanggan.insertPesanPelanggan}"
+												update="growl"></p:commandButton></td>
+									</tr>
+								</table>
+							</h:form>
+						</p:panel>
+
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

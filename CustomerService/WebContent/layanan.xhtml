@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/includes/template.html">
+	<ui:define name="content">
+		<div class="page">
+			<div class="main">
+				<div class="content">
+					<h:form>
+						<p:panel style="margin-bottom:20px; padding:0px"
+							header="Layanan">
+							<p:accordionPanel value="#{layanan.la}" var="l" activeIndex="-1">
+								<p:tab title="#{l.namaLayanan}">
+									<h:panelGrid columns="2" cellpadding="8">
+										<p:graphicImage value="#{l.url}" title="#{l.namaLayanan}" width="200"></p:graphicImage>
+										<h:outputText value="#{l.keterangan}"></h:outputText>
+									</h:panelGrid>
+								</p:tab>
+							</p:accordionPanel>
+						</p:panel>
+						<p:panel style="margin-bottom:20px; padding:0px"
+							header="Fasilitas">
+							<p:accordionPanel value="#{fasilitas.fas}" var="fs" activeIndex="-1">
+								<p:tab title="#{fs.namaFasilitas}">
+									<h:panelGrid columns="2" cellpadding="8">
+										<p:graphicImage value="#{fs.url}" title="#{fs.namaFasilitas}" width="200"></p:graphicImage>
+										<h:outputText value="#{fs.keterangan}"></h:outputText>
+									</h:panelGrid>
+								</p:tab>
+							</p:accordionPanel>
+						</p:panel>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

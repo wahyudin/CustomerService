@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/includes/template.html">
+	<ui:define name="content">
+		<div class="page">
+			<div class="main">
+				<div class="content">
+					<p:panel style="margin-bottom:20px;">
+						<center>
+							<h3>
+								<p:outputLabel value="Anda Berhasil Login" />
+							</h3>
+							<i><p:outputLabel value="Please wait..." /></i>
+						</center>
+						<script>
+							var t = setTimeout(
+									"window.location='http://localhost:8181/CustomerService/home.Outlet'",
+									2000)
+						</script>
+					</p:panel>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/includes/template.html">
+	<ui:define name="content">
+		<div class="page">
+			<div class="main">
+				<div class="content">
+					<div align="center">
+						<p:panel style="margin-bottom:20px; padding:0px" header="LOGIN">
+						<br/><br/>
+							<h:form>
+								<table>
+									<tr>
+										<td><p:outputLabel value="Username" /></td>
+										<td>:</td>
+										<td><p:inputText value="#{login.username}"/></td>
+									</tr>
+									<tr>
+										<td><p:outputLabel value="Password" /></td>
+										<td>:</td>
+										<td><p:password value="#{login.password}"/></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td align="right"><p:commandButton value="Submit" action="#{login.login}"/></td>
+									</tr>
+								</table>
+							</h:form>
+						</p:panel>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

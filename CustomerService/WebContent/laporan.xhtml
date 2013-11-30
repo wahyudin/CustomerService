@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/admin/template.html">
+	<ui:define name="content">
+		<div class="page">
+			<div class="main">
+				<div class="content">
+					<p:panel style="margin-bottom:20px; padding:0px" header="Laporan">
+					<h:form>
+						<p:dataTable id="tbl" value="#{pesanPelanggan.pp}" var="lp">
+							<p:column>
+								<f:facet name="header">
+									<p:outputLabel value="Nama" />
+								</f:facet>
+								<p:outputLabel value="#{lp.namaPelanggan}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<p:outputLabel value="Email" />
+								</f:facet>
+								<p:outputLabel value="#{lp.email}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<p:outputLabel value="Pesan" />
+								</f:facet>
+								<p:outputLabel value="#{lp.pesan}" />
+							</p:column>
+						</p:dataTable>
+						<p:panel style="margin-top:20px" header="Export Data">
+							<h:commandLink value="expor excel">
+								<p:dataExporter type="xls" target="tbl" fileName="Laporan" />
+							</h:commandLink>
+						</p:panel>
+					</h:form>
+					</p:panel>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
